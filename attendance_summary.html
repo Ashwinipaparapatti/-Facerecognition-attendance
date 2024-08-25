@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Summary</title>
+</head>
+<body>
+    <h1>Attendance Summary</h1>
+    {% if img_b64 %}
+        <img src="data:image/png;base64,{{ img_b64 }}" alt="Attendance Summary">
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

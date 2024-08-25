@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Attendance Report</title>
+</head>
+<body>
+    <h1>Individual Attendance Report</h1>
+    <form method="POST" action="/individual_attendance">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Get Report</button>
+    </form>
+    {% if img_b64 %}
+        <h2>Attendance Report for {{ name }}</h2>
+        <img src="data:image/png;base64,{{ img_b64 }}" alt="Attendance Report">
+    {% endif %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

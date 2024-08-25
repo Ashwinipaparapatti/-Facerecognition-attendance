@@ -1,0 +1,97 @@
+
+ <!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Control</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="button-box-wrapper">
+        <div class="button-box">
+            <button id="start-button">Start Recognition</button>
+            <button id="stop-button">Stop Recognition</button>
+            <br><br>
+            <button id="register-button">Register a Face</button>
+            <br><br>
+            
+            <button><a href="{{ url_for('upload') }}">Upload Image</a></button>
+            <button><a href="/download_excel" class="btn btn-primary">Download Attendance</a></button>
+            
+
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#start-button').click(function() {
+                $.post('/start', function(response) {
+                    alert('Recognition started');
+                });
+            });
+
+            $('#stop-button').click(function() {
+                $.post('/stop', function(response) {
+                    alert('Recognition stopped');
+                });
+            });
+
+            $('#register-button').click(function() {
+                window.location.href = '/register';
+            });
+        });
+
+        
+    </script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition Control</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="button-box-wrapper">
+        <div class="button-box">
+            <button id="start-button">Start Recognition</button>
+            <button id="stop-button">Stop Recognition</button>
+            <br><br>
+            <button id="register-button">Register a Face</button>
+            <br><br>
+            <button><a href="{{ url_for('upload') }}">Upload Image</a></button>
+            <button><a href="/download_excel" class="btn btn-primary">Download Attendance</a></button>
+            <button><a href="/attendance_summary" class="btn btn-primary">View Attendance Summary</a></button>
+            <button><a href="/individual_attendance" class="btn btn-primary">View Individual Attendance</a></button>
+        </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#start-button').click(function() {
+                $.post('/start', function(response) {
+                    alert('Recognition started');
+                });
+            });
+
+            $('#stop-button').click(function() {
+                $.post('/stop', function(response) {
+                    alert('Recognition stopped');
+                });
+            });
+
+            $('#register-button').click(function() {
+                window.location.href = '/register';
+            });
+        });
+    </script>
+</body>
+</html>
